@@ -100,6 +100,7 @@ export default function App() {
                 onClick={() => setOpen(false)}
                 className="py-1 font-medium text-slate-700 hover:text-green-700"
               >
+          
                 {l.label}
               </a>
             ))}
@@ -108,8 +109,8 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative overflow-hidden bg-white text-slate-800">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:grid-cols-2 md:py-24">
+     <section id="home" className="scroll-mt-24 relative overflow-hidden bg-white text-slate-800">
+  <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-24 pb-16 md:grid-cols-2 md:py-24">
           {/* Left Column: Text & CTAs */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl font-extrabold tracking-tight text-green-900 md:text-5xl lg:text-6xl leading-tight">
@@ -134,24 +135,23 @@ export default function App() {
               </a>
             </div>
           </div>
-
           {/* Right Column: School Image */}
-          <div className="relative mx-auto w-full max-w-md md:max-w-none">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl border border-green-100 bg-green-50">
-              <img
-                src="/school.jpg" // Replace with your actual image path
-                alt="Arun Valley English School Campus"
-                className="h-72 w-full object-cover sm:h-96 md:h-[400px] hover:scale-105 transition-transform duration-500"
-              />
-              {/* Optional Subtle Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-green-900/10 via-transparent to-transparent"></div>
-            </div>
-          </div>
+         <div className="relative mx-auto w-full max-w-md md:max-w-none">
+  <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-green-100/80 bg-green-50 group">
+    <img
+      src="/school.jpg" // Replace with your actual image path
+      alt="Arun Valley English School Campus"
+      className="h-72 w-full object-cover sm:h-96 md:h-[400px] group-hover:scale-105 transition-transform duration-700 ease-out"
+    />
+    {/* Enhanced Subtle Overlay Gradient for Depth */}
+    <div className="absolute inset-0 bg-gradient-to-t from-green-950/30 via-transparent to-transparent pointer-events-none"></div>
+  </div>
+</div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="border-b border-green-100 bg-green-50">
+      <section className="scroll-mt-24 border-b border-green-100 bg-green-50">
         <div className="mx-auto grid max-w-6xl grid-cols-3 gap-6 px-4 py-10 text-center">
           {stats.map((s) => (
             <div key={s.label} className="p-2">
@@ -162,9 +162,15 @@ export default function App() {
         </div>
       </section>
 
+
+
+
+
       {/* About */}
-      <section id="about" className="bg-white">
-        <div className="mx-auto max-w-4xl px-4 py-16">
+
+      <section id="about" className="scroll-mt-24 bg-white">
+      <div className="mx-auto max-w-4xl px-4 pt-24 pb-16">
+    
           <h2 className="text-3xl font-bold text-green-900">
             About our school
             <span className="mt-2 block h-1 w-16 rounded bg-green-600"></span>
@@ -186,7 +192,7 @@ export default function App() {
       </section>
 
       {/* Courses */}
-      <section id="courses" className="bg-green-50 py-16">
+       <section id="courses" className="scroll-mt-24 bg-green-50 py-24">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-3xl font-bold text-green-900">
             Our classes
@@ -205,8 +211,8 @@ export default function App() {
       </section>
 
       {/* Teacher */}
-      <section id="Teacher" className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16">
+   <section id="Teacher" className="scroll-mt-24 bg-white">
+  <div className="mx-auto max-w-6xl px-4 pt-24 pb-16">
           <div className="mb-10 text-center">
             <h2 className="text-3xl font-bold text-green-900">
               Meet Our Teachers
@@ -246,7 +252,7 @@ export default function App() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="bg-green-50 py-16">
+ <section id="contact" className="scroll-mt-24 bg-green-50 py-24">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-2">
           <div>
             <h2 className="text-3xl font-bold text-green-900">
