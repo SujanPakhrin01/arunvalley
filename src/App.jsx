@@ -5,6 +5,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Courses", href: "#courses" },
   { label: "Teacher", href: "#Teacher" },
+  { label: "Gallery", href: "#Gallery" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -16,25 +17,24 @@ const courses = [
 
 const teachers = [
   { name: "Tilaram Parajuli", role: "Principle", image: "/tilaram.jpg" },
-  { name: "Rabin Biswakarma", role: "Vice Teacher", image: "/rabin.jpg" },
-  { name: "Karna Maya Tamang", role: "Science Teacher", image: "/karna.jpg" },
+  { name: "Rabin B.K", role: "Vice Teacher", image: "/rabin.jpg" },
+  { name: "Karna Maya Tamang", role: "Teacher", image: "/karna.jpg" },
   { name: "Surendra Rai", role: "Teacher", image: "/surendra.jpg" },
   { name: "Uttam Limbu", role: "Teacher", image: "/uttam.jpg" },
-  { name: "Arun Gurung", role: "Teacher", image: "/Arun.jpg" },
+  { name: "Dhan BDR Gurung", role: "Teacher", image: "/Arun.jpg" },
   { name: "Sabina Karki", role: "Teacher", image: "/sabina.jpg" },
-  { name: "Puja Shrestha", role: "Teacher", image: "/puja.jpg" },
+  { name: "Sarswati Shrestha", role: "Teacher", image: "/puja.jpg" },
   { name: "Parivartan Rai", role: "Teacher", image: "/parivartan.jpg" },
-  { name: "Soma Gurung", role: "Teacher", image: "/soma.jpg" },
-  { name: "Rebika Rai", role: "Teacher", image: "/rebika.jpg" },
-  { name: "Beendu Tamang", role: "Teacher", image: "/beendu.jpg" },
+  { name: "Som Kumari Gurung", role: "Teacher", image: "/soma.jpg" },
+  { name: "Rabina Rai", role: "Teacher", image: "/rebika.jpg" },
+  { name: "Bindu Tamang", role: "Teacher", image: "/beendu.jpg" },
   { name: "Eliza Sherpa", role: "Teacher", image: "/eliza.jpg" },
-  { name: "Sujita Limbu", role: "Teacher", image: "/sujita.jpg" },
+  { name: "Sujita Subba Limbu", role: "Teacher", image: "/sujita.jpg" },
   { name: "Mangal Gurung", role: "Teacher", image: "/mangal.jpg" },
   { name: "Asha Tamang", role: "Teacher", image: "/asha.jpg" },
-  { name: "Teacher Name", role: "Teacher", image: "/teachers.jpg" },
-  { name: "Teacher Name", role: "Teacher", image: "/teachers.jpg" },
-  { name: "Teacher Name", role: "Teacher", image: "/teachers.jpg" },
-  { name: "Teacher Name", role: "Teacher", image: "/teachers.jpg" },
+  { name: "Prabina Rai", role: "Teacher", image: "/teachers.jpg" },
+  { name: "Urmila Tamang", role: "Teacher", image: "/teachers.jpg" },
+  { name: "Dil Kumar Bk", role: "Teacher", image: "/teachers.jpg" },
 ];
 
 const stats = [
@@ -49,6 +49,29 @@ const stats = [
   Light green: green-50 -> stats, classes, contact (alternating sections)
   Green      : green-600 / green-700 / green-900 -> buttons, accents, headings
 */
+
+
+const photos = [
+  { id: 1, src: "/extra/sirmam.jpeg", alt: "All staff group photo", title: "Faculty & Staff" },
+  { id: 2, src: "/extra/mam.jpeg", alt: "Female teachers group photo", title: "Female Faculty" },
+  { id: 3, src: "/extra/sir.jpeg", alt: "Male teachers group photo", title: "Male Faculty" },
+  { id: 4, src: "/extra/class.jpeg", alt: "Classroom session", title: "Classroom Learning" },
+  { id: 5, src: "/extra/cuninashirt.jpeg", alt: "Cunina shirt distribution", title: "School Shirts" },
+  { id: 6, src: "/extra/cunindress.jpeg", alt: "Cunina school uniforms", title: "School Uniforms" },
+  { id: 7, src: "/extra/dance.jpeg", alt: "Cultural dance performance", title: "Dance Program" },
+  { id: 8, src: "/extra/line.jpeg", alt: "Students in assembly line", title: "Student Assembly" },
+  { id: 9, src: "/extra/8 class.jpeg", alt: "Class 8 classroom", title: "Class 8 Room" },
+  { id: 10, src: "/extra/picnic.jpeg", alt: "School picnic outing", title: "School Picnic" },
+  { id: 11, src: "/extra/prize.jpeg", alt: "Student winning a prize", title: "Prize Distribution" },
+  { id: 12, src: "/extra/program.jpeg", alt: "Indoor school event", title: "Indoor Program" },
+  { id: 13, src: "/extra/scout.jpeg", alt: "Scout training session", title: "Scout Training" },
+  { id: 14, src: "/extra/scout2.jpeg", alt: "Scout activities", title: "Scout Fitness" },
+  { id: 15, src: "/extra/bag.jpeg", alt: "School bag distribution", title: "Bag Distribution" },
+  { id: 16, src: "/extra/1.jpeg", alt: "School campus activity", title: "Campus Activity" },
+  { id: 17, src: "/extra/tshirt.jpeg", alt: "T-shirt distribution", title: "T-Shirt Program" },
+  { id: 18, src: "/extra/win.jpeg", alt: "Inter-school win celebration", title: "Victory Celebration" },
+];
+
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -251,7 +274,52 @@ export default function App() {
         </div>
       </section>
 
+
+
+      {/* gallery */}
+
+<div id="Gallery" className="min-h-screen bg-gray-50 text-gray-800 pt-20">
+  <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {/* Gallery Section with ID and proper scroll top margin */}
+    <section id="gallery" className="scroll-mt-36">
+      {/* Section Heading & Text */}
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          Photo Gallery
+        </h2>
+        <p className="mt-3 text-lg text-gray-600">
+          Explore our school memories, events, activities, and student achievements.
+        </p>
+      </div>
+
+      {/* Photo Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {photos.map((photo) => (
+          <div 
+            key={photo.id} 
+            className="group relative overflow-hidden rounded-xl shadow-md bg-white border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div className="w-full h-64 overflow-hidden bg-gray-200">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-md font-semibold text-gray-900">{photo.title}</h3>
+              <p className="text-xs text-gray-500 mt-1">{photo.alt}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</div>
+
       {/* Contact */}
+
  <section id="contact" className="scroll-mt-24 bg-green-50 py-24">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-2">
           <div>
