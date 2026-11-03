@@ -30,7 +30,6 @@ const teachers = [
   { name: "Prabina Rai", role: "Teacher", image: "/prabina.png" },
   { name: "Bindu Tamang", role: "Teacher", image: "/bindu.png" },
   { name: "Eliza Sherpa", role: "Account", image: "/aliza.png" },
-  { name: "Sujita Subba Limbu", role: "Teacher", image: "/sujita.png" },
   { name: "Asha Tamang", role: "Teacher", image: "/asha.jpeg" },
   { name: "Sujita Subba Limbu", role: "Teacher", image: "/sujita.png" },
   { name: "Mangal Gurung", role: "Gate Keeper", image: "/mangal.png" },
@@ -69,7 +68,11 @@ const photos = [
   { id: 15, src: "/extra/bag.jpeg", title: "Bag Distribution" },
   { id: 16, src: "/extra/1.jpeg",  title: "School Activity" },  //change this photo later
   { id: 17, src: "/extra/tshirt.jpeg",  title: "T-Shirt Distribution Program" },
-  { id: 18, src: "/extra/win.jpeg",  title: "Victory Celebration" },
+  { id: 18, src: "/extra/win.jpeg",  title: "Victory Celebration" },  
+  { id: 19, src: "/first.jpeg",  title: "Gaupalika Basic Level Topper" },
+  { id: 20, src: "/2nd.jpeg",  title: "Gaupalika Basic Level Topper" },
+   { id: 21, src: "/schoolfirst.jpeg",  title: "School view" },
+  { id: 22, src: "/schoolsecond.jpeg",  title: "school view" },
 ];
 
 export default function App() {
@@ -230,52 +233,57 @@ export default function App() {
       </section>
 
       {/* Teacher */}
-      <section id="Teacher" className="scroll-mt-24 bg-slate-50 border-b border-slate-200/60 py-20">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold text-emerald-950">
-              Meet Our Teachers
-              <span className="mx-auto mt-2 block h-1 w-16 rounded bg-emerald-600"></span>
-            </h2>
-            <p className="mt-3 text-slate-600">
-              Dedicated educators inspiring students to learn, grow, and succeed.
+      {/* Teacher */}
+<section
+  id="Teacher"
+  className="scroll-mt-20 border-b border-slate-200/60 bg-slate-50 py-12 sm:py-16 lg:py-20"
+>
+  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div className="mb-8 text-center sm:mb-10">
+      <h2 className="text-2xl font-bold text-emerald-950 sm:text-3xl lg:text-4xl">
+        Meet Our Teachers
+        <span className="mx-auto mt-2 block h-1 w-12 rounded bg-emerald-600 sm:w-16"></span>
+      </h2>
+      <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-600 sm:text-base">
+        Dedicated educators inspiring students to learn, grow, and succeed.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+      {teachers.map((teacher, index) => (
+        <div
+          key={`${teacher.name}-${index}`}
+          className="overflow-hidden rounded-xl border border-slate-200/80 bg-white text-center shadow-sm transition hover:-translate-y-1 hover:border-emerald-500 hover:shadow-lg"
+        >
+          <div className="aspect-[4/5] w-full bg-slate-100 p-2 sm:p-3">
+            <img
+              src={teacher.image}
+              alt={teacher.name}
+              loading="lazy"
+              className="h-full w-full rounded-lg object-cover object-top"
+            />
+          </div>
+
+          <div className="p-3 sm:p-5">
+            <h3 className="text-sm font-bold text-emerald-950 sm:text-base lg:text-lg">
+              {teacher.name}
+            </h3>
+            <p className="mt-1 text-xs font-medium text-emerald-700 sm:text-sm">
+              {teacher.role}
             </p>
           </div>
-
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {teachers.map((teacher, index) => (
-              <div
-                key={`${teacher.name}-${index}`}
-                className="overflow-hidden rounded-xl border border-slate-200/80 bg-white text-center shadow-sm transition hover:-translate-y-1 hover:border-emerald-500 hover:shadow-lg"
-              >
-                <div className="flex h-64 items-center justify-center bg-slate-100 p-3">
-                  <img
-                    src={teacher.image}
-                    alt={teacher.name}
-                    className="h-full w-full rounded-lg object-cover"
-                  />
-                </div>
-
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-emerald-950">
-                    {teacher.name}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-emerald-700">
-                    {teacher.role}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Gallery */}
       <section id="Gallery" className="scroll-mt-24 bg-slate-50 border-b border-slate-200/60 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-emerald-950 sm:text-4xl">
-              Photo Gallery
+               Gallery
               <span className="mx-auto mt-2 block h-1 w-16 rounded bg-emerald-600"></span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">
@@ -367,7 +375,7 @@ export default function App() {
   <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1.4fr]">
 
     {/* School Brand */}
-    <div className="flex items-start gap-3">
+    <div className="flex items-start gap-3 sm:col-span-2 lg:col-span-1">
       <img
         src="/logo.png"
         alt="Arun Valley English School Logo"
@@ -383,48 +391,53 @@ export default function App() {
       </div>
     </div>
 
-    {/* Faculty */}
-    <div>
-      <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-emerald-900">
-        Faculty
-      </h3>
-      <ul className="space-y-2 text-sm text-gray-600">
-        <li>
-          <a href="#Teacher" className="transition hover:text-emerald-700">
-            Our Teachers
-          </a>
-        </li>
-        <li>
-          <a href="#about" className="transition hover:text-emerald-700">
-            About Our School
-          </a>
-        </li>
-      </ul>
+    {/* Faculty + Contact: side by side on mobile, flattened into the parent grid on sm+ */}
+    <div className="grid grid-cols-2 gap-6 sm:col-span-2 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-[1fr_1.2fr]">
+
+      {/* Faculty */}
+      <div>
+        <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-emerald-900">
+          Faculty
+        </h3>
+        <ul className="space-y-2 text-sm text-gray-600">
+          <li>
+            <a href="#Teacher" className="transition hover:text-emerald-700">
+              Our Teachers
+            </a>
+          </li>
+          <li>
+            <a href="#about" className="transition hover:text-emerald-700">
+              About Our School
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-emerald-900">
+          Contact Us
+        </h3>
+        <ul className="space-y-2 text-sm text-gray-600">
+          <li className="break-all">
+            <a
+              href="mailto:arunvalley123@gmail.com"
+              className="transition hover:text-emerald-700"
+            >
+              arunvalley123@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+9744905560" className="transition hover:text-emerald-700">
+              +9744905560
+            </a>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
-    {/* Contact */}
-    <div>
-      <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-emerald-900">
-        Contact Us
-      </h3>
-      <ul className="space-y-2 text-sm text-gray-600">
-        <li className="break-all">
-          <a
-            href="mailto:arunvalley123@gmail.com"
-            className="transition hover:text-emerald-700"
-          >
-            arunvalley123@gmail.com
-          </a>
-        </li>
-        <li>
-          <a href="tel:+9744905560" className="transition hover:text-emerald-700">
-            +9744905560
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    {/* Location (right side) */}
+    {/* Location */}
     <div className="sm:col-span-2 lg:col-span-1">
       <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-emerald-900">
         Location
